@@ -1,7 +1,7 @@
 console.log("Hello World!");
 
 // First Create Word Bank
-            //EACH WORD SHOULD BE AN ARRAY WITH EACH LETTER BEING AN Element - example var word1 = [ p,i,z,z,a]; 
+            //EACH WORD SHOULD BE AN ARRAY WITH EACH LETTER BEING AN Element - example var word1 = [ p,i,z,z,a];  look into string API = includes() method
             // then var wordBank = [word1, word2, etc]
 
 //generate random number between 1 and total numbers of words and set number to var i -- var i = Floor (total#ofwords*(math.randomnumber)) 

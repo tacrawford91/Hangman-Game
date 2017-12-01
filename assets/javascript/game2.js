@@ -41,8 +41,6 @@ document.onkeyup = function(event) {
                 <h1> ${dashedArray.join(" ")} </h1>
                 `;
                 //subtract 1 guess Update display
-                count--
-                console.log(count);
                 document.querySelector(".count").innerHTML = `
                 <h1> Turns Left: ${count} </h1>
                 `;
@@ -68,12 +66,10 @@ document.onkeyup = function(event) {
                 console.log("key is false");
             } else if (guessedLetters.includes(usersGuess)=== true) {
                 console.log("Already Guessed!!!!")
-            }
             } else { 
                 console.log("Game Over");
             }
         };
 };
-//check if key is in selectedWord - selectedWord.includes(userKey)
 
 

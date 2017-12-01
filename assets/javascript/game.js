@@ -1,17 +1,59 @@
-console.log("Hello World!");
+// Create word bank - 
+//var word = "string1"  (REFACTOR THIS USING SPLIT & JOIN)
+var dogSays = "arf";
+var catSays = "meow";
+//var wordBank = [string1, string 2, etc.]
+var wordBank = [dogSays,catSays];
+// Generate selectedWord - 
+// Generate random number via var randomIndex = Math.Floor(wordBank.length*randomnumber generation);
+// var selecetedWord = wordBank[randomIndex];
+var selectedWord = wordBank[Math.floor((Math.random()*wordBank.length))];
+console.log(selectedWord);
+//  Create dashed array based on selectedWord 
+var guessedLetters = [];
+var dashedArray = [];
+for (var i = 0; i< selectedWord.length; i++){
+dashedArray[i]="_ ";
+}
+//  Display selectedWord as dashes in html
+console.log(dashedArray);
+document.querySelector(".selected").innerHTML = `
+<h1> ${dashedArray.join(" ")} </h1>
+`;
+//Start Count and Display it
+var count = 10;
+document.querySelector(".count").innerHTML = `
+<h1> Turns Left: ${count} </h1>
+`
+// Listen for user key event
+document.onkeyup = function(event) {
+        var usersGuess = event.key;
+        //save to varible userKey = keyevent
+        console.log(usersGuess);
+        //Check user guess keystrokes against selectedWord[i], 
+        // for (var i= count; i > 0; i--){
+                for(var j=0; j<selectedWord.length; j++) {
+                        if(usersGuess === selectedWord[j] & count > 0) {
+                                //change value in selectedWord Array
+                                dashedArray[j] = usersGuess
+                                //Update dashed Array
+                                document.querySelector(".selected").innerHTML = `
+                                <h1> ${dashedArray.join(" ")} </h1>
+                                `;
+                        } else {
+                                console.log("did not match!");
+                                //Subtract guess and update display
+                                console.log("count is" + count);
+                                console.log("i is" + i)
+                                document.querySelector(".count").innerHTML = `
+                                <h1> Turns Left: ${count} </h1>
+                                `
+                                }
+                }
+                // count = count-1;
+        // }
+}
 
-// First Create Word Bank
-            //EACH WORD SHOULD BE AN ARRAY WITH EACH LETTER BEING AN Element - example var word1 = [ p,i,z,z,a];  look into string API = includes() method
-            // then var wordBank = [word1, word2, etc]
-
-//generate random number between 1 and total numbers of words and set number to var i -- var i = Floor (total#ofwords*(math.randomnumber)) 
-
-//Set Selected Word -- selectedWord = wordBank[i]
-            //Display Selcted Word  - selectedWord
-
-// listen for keystroke from user (userKeystroke)
-
-//Set number allowed of number of guesses
 
 //Check user guess keystrokes against selectedWord[i], 
         //display Letter in correct Way

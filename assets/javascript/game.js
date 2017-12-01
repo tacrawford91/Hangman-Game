@@ -31,30 +31,40 @@ document.onkeyup = function(event) {
         //save to varible userKey = keyevent
         console.log(usersGuess);
         //Check user guess keystrokes against selectedWord[i], 
-        // for (var i= count; i > 0; i--){
-                for(var j=0; j<selectedWord.length; j++) {
-                        if(usersGuess === selectedWord[j] & count > 0) {
-                                //change value in selectedWord Array
-                                dashedArray[j] = usersGuess
-                                //Update dashed Array
-                                document.querySelector(".selected").innerHTML = `
-                                <h1> ${dashedArray.join(" ")} </h1>
-                                `;
-                        } else {
-                                console.log("did not match!");
-                                //Subtract guess and update display
-                                console.log("count is" + count);
-                                console.log("i is" + i)
-                                document.querySelector(".count").innerHTML = `
-                                <h1> Turns Left: ${count} </h1>
-                                `
+        for (var i= count; i > 0; i--){
+                if (dashedArray.includes("_ ") === true) {
+                        for(var j=0; j<selectedWord.length; j++) {
+                                if(usersGuess === selectedWord[j] && count > 0) {
+                                        //change value in selectedWord Array
+                                        dashedArray[j] = usersGuess
+                                        //Update dashed Array
+                                        document.querySelector(".selected").innerHTML = `
+                                        <h1> ${dashedArray.join(" ")} </h1>
+                                        `;
+                                } else  if (count > 0) {
+                                        console.log("did not match!");
+                                        //Subtract guess and update display
+                                        if (guessedLetters.includes(usersGuess) === false && selectedWord.includes(usersGuess) === false){
+                                                guessedLetters.push(usersGuess);   
+                                                //MINUS ONE FROM COUNT?!?! 
+                                                count--  
+                                                }
+                                        document.querySelector(".guessed").innerHTML = `
+                                        <h1> ${guessedLetters} </h1>
+                                        `;
+                                        document.querySelector(".count").innerHTML = `
+                                        <h1> Turns Left: ${count} </h1>
+                                        `
+                                        } else {
+                                        console.log("GAME OVER, YOU LOSE")
                                 }
+                        } 
+                } else {
+                 console.log ("YOU WINNN!!!")
                 }
-                // count = count-1;
-        // }
+        }
+
 }
-
-
 //Check user guess keystrokes against selectedWord[i], 
         //display Letter in correct Way
         //subtract from one number of guesses left

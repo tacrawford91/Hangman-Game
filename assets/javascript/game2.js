@@ -19,7 +19,7 @@ console.log(dashedArray);
 document.querySelector(".selected").innerHTML = `
 <h1> ${dashedArray.join(" ")} </h1>
 `;
-count = 10;
+turns = 10;
 // Listen for user key event
 document.onkeyup = function(event) {
         var usersGuess = event.key;
@@ -29,7 +29,7 @@ document.onkeyup = function(event) {
         //check if key is in selectedWord - selectedWord.includes(userKey)
         //if True
         for (var i = 0; i < 1; i++ ) {
-            if (selectedWord.includes(usersGuess) === true && count > 1 && dashedArray.includes("_ ") === true && guessedLetters.includes(usersGuess)=== false) {
+            if (selectedWord.includes(usersGuess) === true && turns > 1 && dashedArray.includes("_ ") === true && guessedLetters.includes(usersGuess)=== false) {
                 console.log("MATCHHHHHH!");
                 //update dashedArray
                 // find index of matched letter
@@ -42,24 +42,24 @@ document.onkeyup = function(event) {
                 `;
                 //subtract 1 guess Update display
                 document.querySelector(".count").innerHTML = `
-                <h1> Turns Left: ${count} </h1>
+                <h1> Turns Left: ${turns} </h1>
                 `;
                 //play victory sound
                 //check for word completion
-                if (dashedArray.includes("_ ") === false && count > 0) {
+                if (dashedArray.includes("_ ") === false && turns > 0) {
                     console.log("winner winner chicken dinner");
                 }
-            } else if (selectedWord.includes(usersGuess) === false && count > 1 && dashedArray.includes("_ ") === true && guessedLetters.includes(usersGuess)=== false) {   // if false
+            } else if (selectedWord.includes(usersGuess) === false && turns > 1 && dashedArray.includes("_ ") === true && guessedLetters.includes(usersGuess)=== false) {   // if false
                 // add letter to guessed list
                 guessedLetters.push(usersGuess);
                 document.querySelector(".guessed").innerHTML = `
                 <h1> ${guessedLetters} </h1>
                 `;
                 // subtract 1 from guess count
-                count--
-                console.log(count);
+                turns--
+                console.log(turns);
                 document.querySelector(".count").innerHTML = `
-                <h1> Turns Left: ${count} </h1>
+                <h1> Turns Left: ${turns} </h1>
                 `;
                 //update hangman image
                 //play loser sound

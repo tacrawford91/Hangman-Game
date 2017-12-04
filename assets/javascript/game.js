@@ -1,3 +1,22 @@
+
+if (document.body.style.backgroundImage = "url('./assets/images.background1.jpg')" !== true ) {
+        document.body.style.backgroundImage = "url('./assets/images/background2.jpg')";
+} else {
+        document.body.style.backgroundImage = "url('./assets/images/background2.jpg')"
+};
+//Playing Audio
+// window.onload = function() {
+//         document.getElementById("my_audio").play();
+//     }
+
+// winnning Images array
+var winningImage = ["'./assets/images/winner1.jpg'","'./assets/images/winner2.jpg'","'./assets/images/winner3.jpg'"]
+var randomNumber = Math.floor(Math.random()*winningImage.length);
+//losing image array
+var losingImage = ["'./assets/images/gameover1.jpg'","'./assets/images/gameover2.jpg'","'./assets/images/gameover3.jpg'"]
+var randomNumber = Math.floor(Math.random()*losingImage.length);
+// //alphabet for guesses
+var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 // Create word bank - 
 //var word = "string1"  (REFACTOR THIS USING SPLIT & JOIN)
 var dogSays = "arf";
@@ -27,9 +46,13 @@ document.querySelector(".count").innerHTML = `
 `
 // Listen for user key event
 document.onkeyup = function(event) {
-        var usersGuess = event.key;
+        if (alphabet.includes(event.key.toLowerCase()) === true) {
+        var usersGuess = event.key.toLowerCase();
         //save to varible userKey = keyevent
         console.log(usersGuess);
+        } else {
+                return ""
+        }
         //Initalize game, Score must be > 0 to play
         for (var i= turns; i > 0; i--){
                 // Check if the selecetedWord is complete.
@@ -65,11 +88,20 @@ document.onkeyup = function(event) {
                                         //Out of guesses and selectedWord is not complete - Gameover
                                         } else {
                                         console.log("GAME OVER, YOU LOSE")
+                                        var alertDiv =  document.createElement("div")
+                                        alertDiv.classList.add("alertDiv");
+                                        alertDiv.innerHTML = ('<img src=' + losingImage[randomNumber] +  "> <h1> Game Over Loser! </h1> <h3>Maybe if you weren't slacking off with Jim, you would have done better!</h3> <h2> Refresh the page to play again!</h2>")
+                                        document.body.appendChild(alertDiv);
                                 }
                         } 
                 } else {
-                //turns are left AND the selectedWord is complete - Winner
-                 console.log ("YOU WINNN!!!")
+                        //turns are left AND the selectedWord is complete - Winner
+                        console.log ("YOU WINNN!!!")
+                        var alertDiv =  document.createElement("div")
+                        alertDiv.classList.add("alertDiv");
+                        alertDiv.innerHTML = ('<img src=' + winningImage[randomNumber] +  "> <h1> Congrats You Win! </h1> <h3>You are way better than Toby, but we already knew that.</h3> <h2> Refresh the page to play again! </h2>")
+                        document.body.appendChild(alertDiv);
+                        i = 0
                 }
         }
 

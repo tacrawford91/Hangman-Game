@@ -1,1 +1,77 @@
-/* Space Holder */
+@font-face {
+    font-family: "TheOfficeFont";
+    src: url(../font/AmericanTypewriterRegular.ttf) format("truetype");
+}
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    height: 900px;
+   font-family: "TheOfficeFont";
+   text-shadow: 2px 2px 5px white;
+
+}
+.instructions {
+    width: 80%;
+    height: 100px;
+    margin-left: 10%;
+    font-size: 30px; 
+    border: 5px solid black;
+}
+.instructions img {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+#content {
+    width: 50%;
+    float: left;
+    padding-top: 10%;
+    text-align: center;
+    font-size: 50px;
+}
+.selected {
+    font-size: 78px;
+    margin: 30px auto;
+    color: white;
+    text-shadow: 8px 10px 15px black;
+    letter-spacing: 5px;
+}
+.count {
+    margin: 30px auto;
+}
+.alertDiv {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    text-align: center;
+}
+
+.alertDiv img {
+    width: 100%;
+    height: 100%;
+    float: right;
+}
+.alertDiv h1 {
+    position: relative;
+    bottom: 98%;
+    font-size: 60px;
+    /* top: 0; */
+
+}
+.alertDiv h2 {
+    position: relative;
+    bottom: 45%;
+    font-size: 60px;
+}
+.alertDiv h3 {
+    position: relative;
+    font-size: 60px;
+    bottom: 87%;
+    font-size: 40px;
+    margin: 0 auto;
+}

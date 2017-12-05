@@ -9,6 +9,7 @@ body {
     height: 900px;
    font-family: "TheOfficeFont";
    text-shadow: 2px 2px 5px white;
+   background-image: url("./../images/background1.jpg") 
 
 }
 .instructions {
@@ -16,17 +17,42 @@ body {
     height: 100px;
     margin-left: 10%;
     font-size: 30px; 
-    border: 5px solid black;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: gray;
+    margin-bottom: 65px;
 }
 .instructions img {
-    width: 100px;
+    width: 34%;
+    min-width: 150px;
     height: 100px;
     float: left;
+    border-right: 2px solid black;
+    border-radius: 5px;
+}
+.instructions a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 8px 10px 15px black;
+    height: 100%;
+    width: 100%;
+}
+.instructions p {
+    margin-top: 32px;
+    height: 100%;
+    width: 100%;
+}
+.instructions:hover {
+    background: white;
+    transition: 0.2s;
+}
+.instructions a:hover {
+    color: black;
 }
 #content {
     width: 50%;
     float: left;
-    padding-top: 10%;
+    padding-top: 4%;
     text-align: center;
     font-size: 50px;
 }
@@ -40,21 +66,40 @@ body {
 .count {
     margin: 30px auto;
 }
+button {
+    width: 150px;
+    height: 43px;
+    border-radius: 30px;
+    font-family: "TheOfficeFont";
+    font-size: 24px;
+    letter-spacing: 8px;
+    background: white;
+    text-shadow: 5px 7px 22px black;
+    margin-top: 50px;
+}
+button:hover {
+    background: black;
+    color: white;
+    text-shadow: 2px 2px 5px white;
+    transition: 0.3s;
+}
 .alertDiv {
     width: 50%;
-    height: 100%;
+    height: 80%;
     position: fixed;
     right: 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; 
     text-align: center;
+    margin-top: 5%;
 }
 
 .alertDiv img {
     width: 100%;
     height: 100%;
     float: right;
+    border-radius: 10px;
 }
 .alertDiv h1 {
     position: relative;
@@ -74,4 +119,12 @@ body {
     bottom: 87%;
     font-size: 40px;
     margin: 0 auto;
+}
+/* Specific Instruction Styling Page */
+.instructionsBody {
+    font-size: 30px;
+    font-family: inherit;
+    width: 50%;
+    line-height: 37px;
+    padding-left: 25px;
 }

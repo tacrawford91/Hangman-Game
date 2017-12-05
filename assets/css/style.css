@@ -21,6 +21,7 @@ body {
     border-radius: 5px;
     background: gray;
     margin-bottom: 65px;
+    text-align: center;
 }
 .instructions img {
     width: 34%;
@@ -49,7 +50,7 @@ body {
 .instructions a:hover {
     color: black;
 }
-#content {
+#indexContent {
     width: 50%;
     float: left;
     padding-top: 4%;
@@ -121,10 +122,23 @@ button:hover {
     margin: 0 auto;
 }
 /* Specific Instruction Styling Page */
-.instructionsBody {
-    font-size: 30px;
+.instructionsContent {
+    width: 50%;
+    font-size: 23px;
     font-family: inherit;
     width: 50%;
     line-height: 37px;
     padding-left: 25px;
+    text-shadow: 2px 2px 5px white;
+
+};
+.instructionsBody {
+    font-size: 23px;
+    font-family: inherit;
+    width: 50%;
+    line-height: 37px;
+    padding-left: 25px;
+}
+ul {
+    margin-bottom: 18px;
 }

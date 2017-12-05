@@ -8,7 +8,7 @@ if (document.body.style.backgroundImage = "url('./assets/images.background1.jpg'
 // window.onload = function() {
 //         document.getElementById("my_audio").play();
 //     }
-
+var insert = document.getElementById("insert");
 // winnning Images array
 var winningImage = ["'./assets/images/winner1.jpg'","'./assets/images/winner2.jpg'","'./assets/images/winner3.jpg'"]
 var randomNumber = Math.floor(Math.random()*winningImage.length);
@@ -25,7 +25,8 @@ function endOfGame(image, text) {
         var alertDiv =  document.createElement("div");
         alertDiv.classList.add("alertDiv");
         alertDiv.innerHTML = ('<img src=' + image +  text);
-        document.body.appendChild(alertDiv);
+        var insert = document.getElementById("insert");
+        insert.appendChild(alertDiv);
 };
 // //alphabet for guesses
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -45,7 +46,7 @@ var guessedLetters = [];
 var dashedArray = [];
 for (var i = 0; i< selectedWord.length; i++){
 dashedArray[i]="_ ";
-}
+};
 //  Display selectedWord as dashes in html
 console.log(dashedArray);
 document.querySelector(".selected").innerHTML = `
@@ -57,6 +58,19 @@ document.querySelector(".count").innerHTML = `
 <h1> Turns Left: ${turns} </h1>
 `
 // reset 
+// function reset() {
+//         alertDiv.classList.remove("alertDiv");
+//         alertDiv.innerHTML = "";
+//         turns = 0
+//         //Generate selected Word
+//         selectedWord = wordBank[Math.floor((Math.random()*wordBank.length))]
+//         var dashedArray = [];
+//         for (var i = 0; i< selectedWord.length; i++){
+//         dashedArray[i]="_ ";
+//         };
+//         //empty words guessed
+//         guessedLetters = [];
+// };
 // Listen for user key event
 document.onkeyup = function(event) {
         if (alphabet.includes(event.key.toLowerCase()) === true) {
@@ -121,3 +135,18 @@ document.onkeyup = function(event) {
         //subtract from one number of guesses left
         // play defeat sound
         //update hangman image 
+var myButton = document.getElementById("myButton");
+myButton.addEventListener("click", function () {
+        var alertDiv = document.getElementsByClassName("alertDiv")
+        alertDiv.innerHTML= "";
+        // alertDiv.classList.remove("alertDiv");
+        turns = 0
+        //Generate selected Word
+        selectedWord = wordBank[Math.floor((Math.random()*wordBank.length))]
+        var dashedArray = [];
+        for (var i = 0; i< selectedWord.length; i++){
+        dashedArray[i]="_ ";
+        };
+        //empty words guessed
+        guessedLetters = [];
+});

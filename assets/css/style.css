@@ -58,7 +58,7 @@ body {
 }
 #indexContent {
     width: 50%;
-    min-width: 440px;  
+    min-width: 525px;  
     float: left;
     padding-top: 4%;
     text-align: center;
@@ -125,7 +125,7 @@ button:hover {
 
 }
 .alertDiv h2 {
-    position: relative;
+    position: fixed;
     bottom: 45%;
     font-size: 60px;
 }

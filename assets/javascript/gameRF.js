@@ -6,7 +6,7 @@ window.onload = function() {
     }
 
 // initial varibles
-    var wordBank = ["stanley","michael", "angela", "oscar","dwight", "scranton","pamela", "jim", "toby", "darryl","narddawg","flenderson","deangelo","creed","holly","levinson"];
+    var wordBank = ["stanley","michael", "angela", "oscar","dwight","pamela", "jim", "toby", "darryl","narddawg","deangelo","creed","holly","jan"];
     var selectedWord = wordBank[random(wordBank)];
     var guessedLetters = [];
     var dashedArray = [];

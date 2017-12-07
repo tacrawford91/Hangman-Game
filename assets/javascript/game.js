@@ -1,8 +1,6 @@
 
 if (document.body.style.backgroundImage = "url('./assets/images.background1.jpg')" !== true ) {
         document.body.style.backgroundImage = "url('./assets/images/background2.jpg')";
-} else {
-        document.body.style.backgroundImage = "url('./assets/images/background2.jpg')"
 };
 //Playing Audio
 // window.onload = function() {
@@ -35,7 +33,7 @@ var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
 var dogSays = "arf";
 var catSays = "meow";
 //var wordBank = [string1, string 2, etc.]
-var wordBank = [dogSays,catSays];
+var wordBank = ["stanley","michael", "angela", "oscar","dwight", "scranton","pamela", "jim", "toby", "darryl","narddawg","flenderson","deangelo","creed","holly","levinson"];
 // Generate selectedWord - 
 // Generate random number via var randomIndex = Math.Floor(wordBank.length*randomnumber generation);
 // var selecetedWord = wordBank[randomIndex];
@@ -53,10 +51,15 @@ document.querySelector(".selected").innerHTML = `
 <h1> ${dashedArray.join(" ")} </h1>
 `;
 //Start turns and Display it
-var turns = 10;
-document.querySelector(".count").innerHTML = `
-<h1> Turns Left: ${turns} </h1>
-`
+var turns = 7;
+function turnUpdate(){
+        document.querySelector(".count").innerHTML = `
+        <h1> Turns Left: ${turns} </h1>
+        `
+}
+//display turns
+turnUpdate();
+
 // reset 
 // function reset() {
 //         alertDiv.classList.remove("alertDiv");
@@ -102,12 +105,13 @@ document.onkeyup = function(event) {
                                                 //First time guessed, must add to guessLetters array
                                                 guessedLetters.push(usersGuess);   
                                                 //Lose Turn
-                                                turns--  
+                                                //Dispaly guessedLetters
+                                                document.querySelector(".guessed").innerHTML = `
+                                                <h1> ${guessedLetters} </h1>
+                                                `;
+                                                turns-- 
                                                 }
-                                        //Dispaly guessedLetters
-                                        document.querySelector(".guessed").innerHTML = `
-                                        <h1> ${guessedLetters} </h1>
-                                        `;
+                                        
                                         //Update turn count
                                         document.querySelector(".count").innerHTML = `
                                         <h1> Turns Left: ${turns} </h1>
@@ -135,18 +139,47 @@ document.onkeyup = function(event) {
         //subtract from one number of guesses left
         // play defeat sound
         //update hangman image 
-var myButton = document.getElementById("myButton");
-myButton.addEventListener("click", function () {
-        var alertDiv = document.getElementsByClassName("alertDiv")
-        alertDiv.innerHTML= "";
+// var myButton = document.getElementById("myButton");
+// myButton.addEventListener("click", function () {
+
+//         insert.innerHTML = ("");
+//         // alertDiv.classList.remove("alertDiv");
+//         turns = 10;
+//         turnUpdate();
+//         //Generate selected Word
+//         selectedWord = wordBank[Math.floor((Math.random()*wordBank.length))]
+//         console.log(selectedWord);
+//         dashedArray = [];
+//         for (var i = 0; i< selectedWord.length; i++){
+//         dashedArray[i]="_ ";
+//         };
+//         // Display New selectedWord
+//         document.querySelector(".selected").innerHTML = `
+//         <h1> ${dashedArray.join(" ")} </h1>
+//         `;
+//         //empty words guessed
+//         guessedLetters = [];
+//         document.querySelector(".guessed").innerHTML = `
+//         `;
+// });
+function reset() {
+        insert.innerHTML = ("");
         // alertDiv.classList.remove("alertDiv");
-        turns = 0
+        turns = 7;
+        turnUpdate();
         //Generate selected Word
         selectedWord = wordBank[Math.floor((Math.random()*wordBank.length))]
-        var dashedArray = [];
+        console.log(selectedWord);
+        dashedArray = [];
         for (var i = 0; i< selectedWord.length; i++){
         dashedArray[i]="_ ";
         };
+        // Display New selectedWord
+        document.querySelector(".selected").innerHTML = `
+        <h1> ${dashedArray.join(" ")} </h1>
+        `;
         //empty words guessed
         guessedLetters = [];
-});
+        document.querySelector(".guessed").innerHTML = `
+        `;
+};

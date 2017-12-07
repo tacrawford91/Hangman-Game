@@ -2,26 +2,32 @@
     font-family: "TheOfficeFont";
     src: url(../font/AmericanTypewriterRegular.ttf) format("truetype");
 }
+html{
+    height: 100%;
+}
 body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; 
-    height: 900px;
+    height: 100%;
+    min-height: 870px;
    font-family: "TheOfficeFont";
    text-shadow: 2px 2px 5px white;
    background-image: url("./../images/background1.jpg") 
 
+
 }
 .instructions {
     width: 80%;
+    width: 390px;
     height: 100px;
-    margin-left: 10%;
+    margin: 0 auto;
     font-size: 30px; 
     border: 2px solid black;
     border-radius: 5px;
     background: gray;
-    margin-bottom: 65px;
     text-align: center;
+    box-shadow:10px 11px 20px 0px #6d6b6b;
 }
 .instructions img {
     width: 34%;
@@ -52,10 +58,14 @@ body {
 }
 #indexContent {
     width: 50%;
+    min-width: 440px;  
     float: left;
     padding-top: 4%;
     text-align: center;
     font-size: 50px;
+}
+.word {
+    margin-top: 55px;
 }
 .selected {
     font-size: 78px;
@@ -66,6 +76,9 @@ body {
 }
 .count {
     margin: 30px auto;
+}
+.guessed {
+    min-height: 70px;
 }
 button {
     width: 150px;
@@ -87,6 +100,7 @@ button:hover {
 .alertDiv {
     width: 50%;
     height: 80%;
+    min-height: 690px;
     position: fixed;
     right: 0;
     background-size: cover;
@@ -99,6 +113,7 @@ button:hover {
 .alertDiv img {
     width: 100%;
     height: 100%;
+    min-height: 640px;
     float: right;
     border-radius: 10px;
 }
@@ -141,4 +156,9 @@ button:hover {
 }
 ul {
     margin-bottom: 18px;
+}
+.wins{
+    margin-top: 30px;
+    color: white;
+    text-shadow: 8px 10px 15px black;
 }
